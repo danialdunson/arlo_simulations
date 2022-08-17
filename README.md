@@ -1,16 +1,9 @@
 # arlo_simulations
-This meta package simulates the Parallax Arlo Robot with an Interbotix WX250S arm in Gazebo. The inertial values for simulation were obtained from a solidworks model.  
+This meta package simulates the Parallax Arlo Robot with an Interbotix WX250S arm in Gazebo. The inertial values for simulation were obtained using SolidWorks.  
 
 Please use `Gazebo Version> 9.19.x+`
 
-Download the following packages and place them in your workspace.
-
-|Required Packages    |  Link                                                                                   |
-|--------------       | ----------                                                                              |
-| aws-house           | [repository](https://github.com/aws-robotics/aws-robomaker-small-house-world)           |
-| interbotix_ros_*    | [repository](https://github.com/aws-robotics/aws-robomaker-small-house-world)           |
-
-Install the interbotix packages by running the install script from [here](https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/install/amd64). Its easiest to put all the packages into one workspace like this:
+Install the interbotix packages by running the [install script](https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/install/amd64). Its easiest to put all the packages into one workspace like this:
 
 ```
 src
@@ -20,7 +13,11 @@ src
 ├── interbotix_ros_manipulators
 └── interbotix_ros_toolboxes
 ```
-
+Clone/install the repos
+|Required Packages    |  Link                                                                                   |
+|--------------       | ----------                                                                              |
+| aws-house           | [repository](https://github.com/aws-robotics/aws-robomaker-small-house-world)           |
+| interbotix_ros_*    | [repository](https://github.com/Interbotix/interbotix_ros_manipulators)                 |
 
 # Running the Simulation
 run simulation of ArloRobot (no external dependencies)
@@ -29,9 +26,10 @@ roslaunch arlo_gazebo arlo_sim.launch paused:=True
 ```
 # Simulating Arlo & wx250s 
 * Prerequisite:
-  - Launch the [xsarm_moveit.launch](https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/interbotix_xsarm_moveit/launch/xsarm_moveit.launch) file like this ([video](https://youtu.be/k3zkgN7TYTE?t=455)) to verify the interbotix packages are correctly installed.
+  - Launch the [xsarm_moveit.launch](https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/interbotix_xsarm_moveit/launch/xsarm_moveit.launch) file like this ([video](https://youtu.be/k3zkgN7TYTE?t=455)) to verify the interbotix packages are correctly installed.  
+<br/>
 
-* Simulate Arlo robot with mounted arm (wx250s):
+* Simulate Arlo robot with mounted wx250s arm:
 ```bash
 roslaunch arlo_gazebo arlo_wx250s_sim.launch rosbridge:=False world_modifier:=EMPTY
 ```
@@ -40,11 +38,7 @@ roslaunch arlo_gazebo arlo_wx250s_sim.launch rosbridge:=False world_modifier:=EM
 roslaunch arlo_gazebo arlo_wx250s_sim.launch rosbridge:=False
 ```
 
-Press tab to see the available options.
-
-![This is an image](/resources/images/Press_tab_to_view_launch_args.png)
-
-There are 19 args are available in the launch file to modify as in command line.
+### ROS Launch args
 
 Please visit the [launch folder](/launch/README.md) for more information.
 
