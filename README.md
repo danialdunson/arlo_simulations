@@ -55,13 +55,13 @@ Please visit the [launch folder](/launch/README.md) for more information.
 
 
 
-## View of the Arlo Robot running in RViz.
+## [img] Arlo Robot running in RViz.
 ![This is an image](/.github/resources/images/rviz_gazebo.png)
 
-## Example of populated rtabmap/MapData in RViz.
+## [img] rtabmap/MapData in RViz.
 ![This is an image](/.github/resources/images/MapData_after_mapping.png)
 
-## View of Rtabmap in GUI.
+## [img] Rtabmap GUI.
 Set the `use_rtabmapviz` argument to `true` in the launch file.
 
 In Rtabmap-GUI, enable mapping to populate the rtabmap/MapData as shown in the image below.
