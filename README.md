@@ -27,13 +27,19 @@ run simulation of ArloRobot (no external dependencies)
 ```bash
 roslaunch arlo_gazebo arlo_sim.launch paused:=True
 ```
-# Simulating Arlo & WX250S 
-Launch the [xsarm_moveit.launch](https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/interbotix_xsarm_moveit/launch/xsarm_moveit.launch) file like this ([video](https://youtu.be/k3zkgN7TYTE?t=455)) to verify the interbotix packages are correctly installed.
+# Simulating Arlo & wx250s 
+* Prerequisite:
+  - Launch the [xsarm_moveit.launch](https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/interbotix_xsarm_moveit/launch/xsarm_moveit.launch) file like this ([video](https://youtu.be/k3zkgN7TYTE?t=455)) to verify the interbotix packages are correctly installed.
 
-* Start the simulation with the following command:
+* Simulate Arlo robot with mounted arm (wx250s):
 ```bash
-roslaunch arlo_gazebo arlo_sim.launch
+roslaunch arlo_gazebo arlo_wx250s_sim.launch rosbridge:=False world_modifier:=EMPTY
 ```
+* Simulate Arlo robot with mounted arm in [small-house](https://github.com/aws-robotics/aws-robomaker-small-house-world):
+```bash
+roslaunch arlo_gazebo arlo_wx250s_sim.launch rosbridge:=False
+```
+
 Press tab to see the available options.
 
 ![This is an image](/resources/images/Press_tab_to_view_launch_args.png)
