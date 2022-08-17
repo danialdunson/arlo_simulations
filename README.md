@@ -93,3 +93,7 @@ roslaunch arlo_gazebo pick_place.launch robot_name:=wx250s robot_model:=wx250s t
 ```
 From here, we can request 6-DOF gripper poses by calling the `/contact_graspnet/request_inference` service.
 ![This is an image](/.github/resources/images/rosbridge_working.png)
+This implementation can be further improved by training the contact_graspnet with updated gripper dimensions. The collision mesh files have been aligned with the original panda implementation similiar to [this implementation](https://github.com/NVlabs/contact_graspnet/issues/8#issuecomment-1039480945).
+<br/>See these two issue threads:
+  - [gripper_finger_length](https://github.com/NVlabs/contact_graspnet/issues/25#issuecomment-1213238791)
+  - [train using diff collistion mesh](https://github.com/NVlabs/contact_graspnet/issues/8#issuecomment-932755773)
