@@ -1,46 +1,70 @@
-# TurtleBot3
-<img src="https://github.com/ROBOTIS-GIT/emanual/blob/master/assets/images/platform/turtlebot3/logo_turtlebot3.png" width="300">
+# arlo_simulations
+This meta package simulates the Parallax Arlo Robot with an Interbotix WX250S arm in Gazebo. The inertial values for simulation were obtained using SolidWorks.  
 
-[![kinetic-devel Status](https://github.com/ROBOTIS-GIT/turtlebot3_simulations/workflows/kinetic-devel/badge.svg)](https://github.com/ROBOTIS-GIT/turtlebot3_simulations/tree/kinetic-devel)
-[![melodic-devel Status](https://github.com/ROBOTIS-GIT/turtlebot3_simulations/workflows/melodic-devel/badge.svg)](https://github.com/ROBOTIS-GIT/turtlebot3_simulations/tree/melodic-devel)
-[![noetic-devel Status](https://github.com/ROBOTIS-GIT/turtlebot3_simulations/workflows/noetic-devel/badge.svg)](https://github.com/ROBOTIS-GIT/turtlebot3_simulations/tree/noetic-devel)
+Please use `Gazebo Version> 9.19.x+`
 
-[![dashing-devel Status](https://github.com/ROBOTIS-GIT/turtlebot3_simulations/workflows/dashing-devel/badge.svg)](https://github.com/ROBOTIS-GIT/turtlebot3_simulations/tree/dashing-devel)
-[![foxy-devel Status](https://github.com/ROBOTIS-GIT/turtlebot3_simulations/workflows/foxy-devel/badge.svg)](https://github.com/ROBOTIS-GIT/turtlebot3_simulations/tree/foxy-devel)
-[![galactic-devel Status](https://github.com/ROBOTIS-GIT/turtlebot3_simulations/workflows/galactic-devel/badge.svg)](https://github.com/ROBOTIS-GIT/turtlebot3_simulations/tree/galactic-devel)
+Install the interbotix packages by running the [install script](https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/install/amd64). Its easiest to put all the packages into one workspace like this:
 
-## ROBOTIS e-Manual for TurtleBot3
-- [ROBOTIS e-Manual for TurtleBot3](http://turtlebot3.robotis.com/)
+```
+src
+├── arlo_simulations
+├── aws-robomaker-small-house-world
+├── interbotix_ros_core
+├── interbotix_ros_manipulators
+└── interbotix_ros_toolboxes
+```
+Clone/install the repos
+|Required Packages    |  Link                                                                                   |
+|--------------       | ----------                                                                              |
+| aws-house           | [repository](https://github.com/aws-robotics/aws-robomaker-small-house-world)           |
+| interbotix_ros_*    | [repository](https://github.com/Interbotix/interbotix_ros_manipulators)                 |
 
-## Wiki for turtlebot3_simulations Packages
-- http://wiki.ros.org/turtlebot3_simulations (metapackage)
-- http://wiki.ros.org/turtlebot3_fake
-- http://wiki.ros.org/turtlebot3_gazebo
+# Running the Simulation
+run simulation of ArloRobot (no external dependencies)
+```bash
+roslaunch arlo_gazebo arlo_sim.launch paused:=True
+```
+# Simulating Arlo & wx250s 
+* Prerequisite:
+  - Launch the [xsarm_moveit.launch](https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/interbotix_xsarm_moveit/launch/xsarm_moveit.launch) file like this ([video](https://youtu.be/k3zkgN7TYTE?t=455)) to verify the interbotix packages are correctly installed.  
+<br/>
 
-## Open Source related to TurtleBot3
-- [turtlebot3](https://github.com/ROBOTIS-GIT/turtlebot3)
-- [turtlebot3_msgs](https://github.com/ROBOTIS-GIT/turtlebot3_msgs)
-- [turtlebot3_simulations](https://github.com/ROBOTIS-GIT/turtlebot3_simulations)
-- [turtlebot3_applications_msgs](https://github.com/ROBOTIS-GIT/turtlebot3_applications_msgs)
-- [turtlebot3_applications](https://github.com/ROBOTIS-GIT/turtlebot3_applications)
-- [turtlebot3_autorace](https://github.com/ROBOTIS-GIT/turtlebot3_autorace)
-- [turtlebot3_deliver](https://github.com/ROBOTIS-GIT/turtlebot3_deliver)
-- [hls_lfcd_lds_driver](https://github.com/ROBOTIS-GIT/hls_lfcd_lds_driver)
-- [turtlebot3_manipulation](https://github.com/ROBOTIS-GIT/turtlebot3_manipulation.git)
-- [turtlebot3_manipulation_simulations](https://github.com/ROBOTIS-GIT/turtlebot3_manipulation_simulations.git)
-- [robotis_manipulator](https://github.com/ROBOTIS-GIT/robotis_manipulator)
-- [open_manipulator_msgs](https://github.com/ROBOTIS-GIT/open_manipulator_msgs)
-- [open_manipulator](https://github.com/ROBOTIS-GIT/open_manipulator)
-- [open_manipulator_simulations](https://github.com/ROBOTIS-GIT/open_manipulator_simulations)
-- [open_manipulator_perceptions](https://github.com/ROBOTIS-GIT/open_manipulator_perceptions)
-- [dynamixel_sdk](https://github.com/ROBOTIS-GIT/DynamixelSDK)
-- [OpenCR-Hardware](https://github.com/ROBOTIS-GIT/OpenCR-Hardware)
-- [OpenCR](https://github.com/ROBOTIS-GIT/OpenCR)
+* Simulate Arlo robot with mounted wx250s arm:
+```bash
+roslaunch arlo_gazebo arlo_wx250s_sim.launch rosbridge:=False world_modifier:=EMPTY
+```
+* Simulate Arlo robot with mounted arm in [small-house](https://github.com/aws-robotics/aws-robomaker-small-house-world):
+```bash
+roslaunch arlo_gazebo arlo_wx250s_sim.launch rosbridge:=False
+```
 
-## Documents and Videos related to TurtleBot3
-- [ROBOTIS e-Manual for TurtleBot3](http://turtlebot3.robotis.com/)
-- [ROBOTIS e-Manual for OpenManipulator](http://emanual.robotis.com/docs/en/platform/openmanipulator/)
-- [ROBOTIS e-Manual for Dynamixel SDK](http://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_sdk/overview/)
-- [Website for TurtleBot Series](http://www.turtlebot.com/)
-- [e-Book for TurtleBot3](https://community.robotsource.org/t/download-the-ros-robot-programming-book-for-free/51/)
-- [Videos for TurtleBot3 ](https://www.youtube.com/playlist?list=PLRG6WP3c31_XI3wlvHlx2Mp8BYqgqDURU)
+### ROS Launch args
+
+Please visit the [launch folder](/launch/README.md) for more information.
+
+|Argument               | description                           | default                   |
+|-----------------------|:-------------------------------------:|--------------------------:|
+|x_pos, y_pos, z_pos    | Set robot spawn location              | (-1.33, 0.55, 0.02)       |
+|use_rtabmapviz         | Enable rtabmap GUI visualization      | false                     |
+|ns                     | Namespace for the entire robot        | wx250s                    |
+|arlo_rviz              | Visualize the Arlo Robot in RViz      | true                      |
+|isolate                | Minimal startup                       | false                     |
+|teleop                 | Launch teleop_keyboard node           | false                     |
+
+
+
+
+## View of the Arlo Robot running in RViz.
+![This is an image](/resources/images/rviz_gazebo.png)
+
+## Example of populated rtabmap/MapData in RViz.
+![This is an image](/resources/images/MapData_after_mapping.png)
+
+## View of Rtabmap in GUI.
+Set the `use_rtabmapviz` argument to `true` in the launch file.
+
+In Rtabmap-GUI, enable mapping to populate the rtabmap/MapData as shown in the image below.
+
+![This is an image](/resources/images/rtabmapviz_enable_mapping.jpg)
+
+
