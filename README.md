@@ -92,4 +92,4 @@ python contact_graspnet/hello-world-talker.py
 roslaunch arlo_gazebo pick_place.launch robot_name:=wx250s robot_model:=wx250s tester:=Beta
 ```
 From here, we can request 6-DOF gripper poses by calling the `/contact_graspnet/request_inference` service.
-![This is an image](/.github/resources/images/rosbridge_working.jpg)
+![This is an image](/.github/resources/images/rosbridge_working.png)
