@@ -1,5 +1,7 @@
 # arlo_simulations
-This meta package simulates the Parallax Arlo Robot with an Interbotix WX250S arm in Gazebo. The inertial values for simulation were obtained using SolidWorks.  
+This meta package simulates the Parallax Arlo Robot with a 6-DOF Interbotix WX250S arm in Gazebo. The inertial values for simulation were obtained using SolidWorks.  
+
+# Install
 
 Please use `Gazebo Version> 9.19.x+`
 
@@ -19,15 +21,14 @@ Clone/install the repos
 | aws-house           | [repository](https://github.com/aws-robotics/aws-robomaker-small-house-world)           |
 | interbotix_ros_*    | [repository](https://github.com/Interbotix/interbotix_ros_manipulators)                 |
 
-# Running the Simulation
 run simulation of ArloRobot (no external dependencies)
 ```bash
 roslaunch arlo_gazebo arlo_sim.launch paused:=True
 ```
-# Simulating Arlo & wx250s 
-* Prerequisite:
-  - Launch the [xsarm_moveit.launch](https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/interbotix_xsarm_moveit/launch/xsarm_moveit.launch) file like this ([video](https://youtu.be/k3zkgN7TYTE?t=455)) to verify the interbotix packages are correctly installed.  
+Launch the [xsarm_moveit.launch](https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/interbotix_xsarm_moveit/launch/xsarm_moveit.launch) file like this ([video](https://youtu.be/k3zkgN7TYTE?t=455)) to verify the interbotix packages are correctly installed.  
 <br/>
+
+# Simulating Arlo & wx250s 
 
 * Simulate Arlo robot with mounted wx250s arm:
 ```bash
@@ -55,16 +56,16 @@ Please visit the [launch folder](/launch/README.md) for more information.
 
 
 ## View of the Arlo Robot running in RViz.
-![This is an image](/resources/images/rviz_gazebo.png)
+![This is an image](/.github/resources/images/rviz_gazebo.png)
 
 ## Example of populated rtabmap/MapData in RViz.
-![This is an image](/resources/images/MapData_after_mapping.png)
+![This is an image](/.github/resources/images/MapData_after_mapping.png)
 
 ## View of Rtabmap in GUI.
 Set the `use_rtabmapviz` argument to `true` in the launch file.
 
 In Rtabmap-GUI, enable mapping to populate the rtabmap/MapData as shown in the image below.
 
-![This is an image](/resources/images/rtabmapviz_enable_mapping.jpg)
+![This is an image](/.github/resources/images/rtabmapviz_enable_mapping.jpg)
 
 
