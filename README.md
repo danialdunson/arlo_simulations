@@ -1,5 +1,5 @@
 # arlo_simulations
-This meta package simulates the Parallax Arlo Robot with a 6-DOF Interbotix WX250S arm in Gazebo. The inertial values for simulation were obtained using SolidWorks.  
+This meta package simulates the Parallax Arlo Robot with a 6-DOF Interbotix WX250S arm in Gazebo. The inertial values for simulation were obtained using SolidWorks.  dfg
 
 # Install
 
