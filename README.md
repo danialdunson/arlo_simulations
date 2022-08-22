@@ -85,7 +85,7 @@ In Rtabmap-GUI, enable mapping to populate the rtabmap/MapData as shown in the i
 Start the service call provider with:
 ```bash
 conda activate contact_graspnet_env
-python contact_graspnet/hello-world-talker.py
+python contact_graspnet/ros_ServiceProvider.py
 ```
 <br/>We can launch a [service caller](https://github.com/danialdunson/arlo_simulations/blob/main/arlo_gazebo/scripts/contact_grspnet2movegroup.py), node from the catkin_workspace environment: 
 ```bash

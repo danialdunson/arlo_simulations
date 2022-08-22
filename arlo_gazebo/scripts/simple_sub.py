@@ -39,7 +39,6 @@ def callback(data):
 
   # temp_np_2 = temp_np[:, 5, :]
 
-
   print(temp)
   print(temp_np)
   print('callback done')
