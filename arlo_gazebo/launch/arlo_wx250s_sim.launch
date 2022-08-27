@@ -3,9 +3,9 @@
 Simulate arlo with an attatched wx250s gripper arm. 
 It starts gazebo and spawns the robot with the necessary plugins.
 
-Launch the mapping service seperately.
+mapping service can be launched seperately.
 
-rosbridge and teleop windows are also spawned.
+rosbridge and teleop windows are launchable in here.
 -->
     <!-- ns is robot_model. its for tf_frames -->
   <arg name="ns"                                default="wx250s"/>  
